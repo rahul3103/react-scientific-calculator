@@ -1,21 +1,40 @@
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import React from 'react';
 
-const Button = (props) => {
+const ButtonDiv = styled.div`
+  width: 75px;
+  background: greenyellow;
+  border: 1px solid black;
+  padding: 10px 20px;
+  color: black;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  user-select: none;
+`;
 
-  // the props used:
-  // className for css coloring
-  // value is the actual value used for operations
-  // onClick is the click method
-  // disabled is used to disable/enable buttons (mainly used for radians and degrees)
-  const { className, value, onClick, label, disabled } = props;
-
-  return (
-    <button className={className}
-      onClick={() => onClick(value)}
-      disabled={disabled}>
-      {label}
-    </button>
-  )
-}
+const Button = ({ className, value, onClick, label, disabled }) => (
+  <ButtonDiv
+    className={className}
+    onClick={() => onClick(value)}
+    disabled={disabled}
+  >
+    {label}
+  </ButtonDiv>
+);
 
 export default Button;
+
+Button.propTypes = {
+  className: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  label: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
+  disabled: PropTypes.bool,
+};
+
+Button.defaultProps = {
+  className: '',
+  disabled: false,
+};
