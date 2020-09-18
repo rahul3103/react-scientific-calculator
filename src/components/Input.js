@@ -1,13 +1,15 @@
+import styled from 'styled-components';
 import React from 'react';
 
-class Input extends React.Component {
-  render() {
-    return (
-      <div className={"screen-row-input"}>
-        {this.props.children} {/* this is the value passed from the button*/}
-      </div>
-    );
-  }
-}
+const Wrapper = styled.div`
+  height: 35px;
+  width: 290px;
+  text-align: right;
+  font-size: 25px;
+  border: 5px solid black;
+  user-select: none;
+`;
+
+const Input = ({ children }) => <Wrapper>{children}</Wrapper>;
 
 export default Input;
