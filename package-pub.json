@@ -1,10 +1,14 @@
 {
   "name": "react-scientific-calculator",
-  "version": "0.6.0",
+  "version": "0.9.0",
   "private": false,
   "peerDependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rahul3103/react-scientific-calculator"
   },
   "browserslist": {
     "production": [">0.2%", "not dead", "not op_mini all"],
